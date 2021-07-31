@@ -1,31 +1,26 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "paracetamolauth",
   "version": "${version}",
-
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "ParacetamolAuth",
+  "description": "Implements VIAaaS authentication, reducing headache of web authenticator",
   "authors": [
-    "Me!"
+    "creeper123123321"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://github.com/creeper123123321/ParacetamolAuth",
+    "sources": "https://github.com/creeper123123321/ParacetamolAuth"
   },
-
-  "license": "CC0-1.0",
+  "license": "GPL-3.0",
   "icon": "assets/modid/icon.png",
-
-  "environment": "*",
+  "environment": "client",
   "entrypoints": {
-    "main": [
-      "net.fabricmc.example.ExampleMod"
+    "client": [
+      "br.nom.yt.re.paracetamol.ParacetamolAuth"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
   ],
-
   "depends": {
     "fabricloader": ">=0.11.3",
     "fabric": "*",
@@ -33,6 +28,6 @@
     "java": ">=16"
   },
   "suggests": {
-    "another-mod": "*"
+    "viafabric": "*"
   }
 }
