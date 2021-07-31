@@ -30,16 +30,21 @@ public class ParacetamolAuth implements ClientModInitializer {
 						client.setScreen(new ConfirmScreen(
 								result -> {
 									client.setScreen(oldScreen);
-									NetworkUtils.EXECUTOR.execute(() -> {
-										try {
-											client.getSessionService().joinServer(client.getSession().getProfile(),
-													client.getSession().getAccessToken(), connectionHash);
-										} catch (Exception e) {
-											e.printStackTrace();
-											future.complete(null);
-										}
-										future.complete(PacketByteBufs.empty());
-									});
+
+									if (result) {
+										NetworkUtils.EXECUTOR.execute(() -> {
+											try {
+												client.getSessionService().joinServer(client.getSession().getProfile(),
+														client.getSession().getAccessToken(), connectionHash);
+											} catch (Exception e) {
+												e.printStackTrace();
+												future.complete(null);
+											}
+											future.complete(PacketByteBufs.empty());
+										});
+									} else {
+										future.complete(null);
+									}
 								},
 								new LiteralText("Allow VIAaaS to impersonate you?"),
 								new LiteralText("This will allow VIAaaS instance to authenticate as you in a Minecraft server.")
