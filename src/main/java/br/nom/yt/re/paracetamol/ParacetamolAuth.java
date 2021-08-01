@@ -6,7 +6,7 @@ import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.minecraft.client.gui.screen.ConfirmScreen;
 import net.minecraft.client.util.NetworkUtils;
 import net.minecraft.network.PacketByteBuf;
-import net.minecraft.text.LiteralText;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Identifier;
 
 import java.util.concurrent.CompletableFuture;
@@ -46,8 +46,8 @@ public class ParacetamolAuth implements ClientModInitializer {
 										future.complete(null);
 									}
 								},
-								new LiteralText("Allow VIAaaS to impersonate you?"),
-								new LiteralText("This will allow VIAaaS instance to authenticate as you in a Minecraft server.")
+								new TranslatableText("viaaas.impersonate.title"),
+								new TranslatableText("viaaas.impersonate.content")
 						));
 					});
 

@@ -1,0 +1,4 @@
+{
+  "viaaas.impersonate.title": "Allow VIAaaS to impersonate you?",
+  "viaaas.impersonate.content": "This will allow this VIAaaS instance to authenticate as you in a Minecraft server."
+}
