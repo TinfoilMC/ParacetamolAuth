@@ -24,10 +24,6 @@
   "depends": {
     "fabricloader": ">=0.11.3",
     "fabric": "*",
-    "minecraft": "*",
-    "java": ">=16"
-  },
-  "suggests": {
-    "viafabric": "*"
+    "minecraft": "1.21.11"
   }
 }
